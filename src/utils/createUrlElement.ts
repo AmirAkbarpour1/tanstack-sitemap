@@ -1,10 +1,10 @@
-import { formatDate } from '~/utils/date'
 import type {
   AlternateLink,
   SitemapImage,
   SitemapNews,
   SitemapVideo,
 } from '~/core/types'
+import { formatDate } from '~/utils/date'
 
 export const createUrlElement = (doc: any, entry: any) => {
   const url = doc.ele('url')
