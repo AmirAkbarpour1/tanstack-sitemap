@@ -460,10 +460,6 @@ sitemapPlugin({
 
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guide](https://claude.ai/chat/CONTRIBUTING.md) for details.
-
 ### Development Setup
 
 ```
@@ -486,8 +482,6 @@ pnpm format
 # Run linting
 pnpm lint
 
-
-
 ```
 
 ## 📄 License
@@ -507,4 +501,6 @@ MIT © [Amir Akbarpour](https://github.com/AmirAkbarpour1)
 
 ---
 
-\<div align="center"> \<strong>Made with ❤️ for the TanStack community\</strong> \</div>
+<div align="center">
+  <strong>Made with ❤️ for the TanStack community</strong>
+</div>
