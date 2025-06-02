@@ -1,0 +1,46 @@
+{
+  "name": "tanstack-sitemap",
+  "version": "1.0.0",
+  "description": "A  sitemap builder written in TypeScript for Tanstack start",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "format": "prettier --write .",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "test": "vitest",
+    "build": "tsc",
+    "clean": "rm -rf dist"
+  },
+  "keywords": [
+    "tanstack",
+    "sitemap",
+    "builder",
+    "typescript",
+    "seo",
+    "vite"
+  ],
+  "author": "Amir Akbarpour",
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@tanstack/eslint-config": "^0.2.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.3",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.1.4"
+  },
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "dependencies": {
+    "vite": "^6.3.5",
+    "xmlbuilder2": "^3.1.1"
+  }
+}
