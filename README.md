@@ -67,7 +67,7 @@ export default defineConfig({
 
 ### Runtime Generation
 
-Create a server route file named `sitemap[.]xml.ts` and use the `generateSitemap `function in it:
+Create a server route file named `sitemap[.]xml.ts` and use the `generateSitemap` function in it:
 
 ```
 import { createServerFileRoute } from "@tanstack/react-start/server";
@@ -108,6 +108,7 @@ export const ServerRoute = createServerFileRoute("/sitemap.xml").methods({
     });
   },
 });
+
 ```
 
 ## 📚 Configuration
