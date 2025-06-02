@@ -21,7 +21,8 @@
     "vite"
   ],
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "author": "Amir Akbarpour",
   "license": "MIT",
