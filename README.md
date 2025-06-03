@@ -36,30 +36,36 @@ Add the plugin to your `vite.config.ts`:
 
 ```
 import { defineConfig } from 'vite'
-import { sitemapPlugin } from 'tanstack-sitemap'
+import { SitemapConfig, sitemapPlugin } from "tanstack-sitemap";
+import type { FileRouteTypes } from "./src/routeTree.gen";
 
-export default defineConfig({
-  plugins: [
-    sitemapPlugin({
+
+type Routes = FileRouteTypes["fullPaths"];
+
+const sitemap : SitemapConfig<Routes> = {
       defaults: {
-        baseUrl: 'https://your-site.com',
-        changeFrequency: 'weekly',
+        baseUrl: "https://your-site.com",
+        changeFrequency: "weekly",
         priority: 0.7,
       },
       routes: {
-        '/': { priority: 1.0, changeFrequency: 'daily' },
-        '/about': { priority: 0.8 },
-        '/blog/$slug': {
+        "/": { priority: 1.0, changeFrequency: "daily" },
+        "/about": { priority: 0.8 },
+        "/blog/$slug": {
           provideParams: async () => {
             // Fetch your blog posts
-            const posts = await getBlogPosts()
-            return posts.map(post => ({ slug: post.slug }))
+            const posts = await getBlogPosts();
+            return posts.map((post) => ({ slug: post.slug }));
           },
           priority: 0.6,
-          changeFrequency: 'monthly'
-        }
-      }
-    })
+          changeFrequency: "monthly",
+        },
+      },
+    }
+
+export default defineConfig({
+  plugins: [
+    sitemapPlugin(sitemap)
   ]
 })
 
@@ -265,12 +271,13 @@ Dynamic routes use the `$parameter` syntax and require a `provideParams` functio
 ```
 {
   routes: {
-    '/': {
+    '/$lang': {
+      provideParams: async () => [{ lang : "en" } , { lang : "es" } , { lang : "fr" }]
       alternatives: [
-        { hrefLang: 'en', href: 'https://example.com/en' },
-        { hrefLang: 'es', href: 'https://example.com/es' },
-        { hrefLang: 'fr', href: 'https://example.com/fr' },
-        { hrefLang: 'x-default', href: 'https://example.com' }
+        { hrefLang: 'en', href: '/en' },
+        { hrefLang: 'es', href: '/es' },
+        { hrefLang: 'fr', href: '/fr' },
+        { hrefLang: 'x-default', href: '/en' }
       ]
     }
   }
@@ -498,7 +505,7 @@ MIT © [Amir Akbarpour](https://github.com/AmirAkbarpour1)
 
 - 🐛 [Report Issues](https://github.com/AmirAkbarpour1/tanstack-sitemap/issues)
 - 💬 [Discussions](https://github.com/AmirAkbarpour1/tanstack-sitemap/discussions)
-- 🐦 [Follow on X ](https://X.com/AmirAkbarpour1)
+- 🐦 [Follow on X ](https://X.com/Amir_Akbarpour1)
 
 ---
 
