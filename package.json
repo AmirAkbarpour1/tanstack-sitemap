@@ -1,6 +1,6 @@
 {
   "name": "tanstack-sitemap",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A  sitemap builder written in TypeScript for Tanstack start",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
