@@ -1,15 +1,14 @@
 import { create } from 'xmlbuilder2'
-import { normalizePath } from 'vite'
 import type {
   BaseSitemapEntry,
   DynamicRouteConfig,
   SitemapConfig,
 } from '~/core/types'
+import { buildUrl, normalizePath  } from '~/utils/path'
 import { buildDynamicUrl, isDynamic } from '~/utils/urlTemplate'
 import { createUrlElement } from '~/utils/createUrlElement'
 import { formatDate } from '~/utils/date'
 import { processMedia } from '~/utils/media'
-import { buildUrl } from '~/utils/path'
 
 export const processRoute = async <TRoutes extends string>(
   route: TRoutes,

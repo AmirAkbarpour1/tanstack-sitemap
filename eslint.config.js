@@ -32,6 +32,11 @@ export default [
     },
   },
   {
-    ignores: ['eslint.config.js', 'prettier.config.js', 'vitest.config.ts' , "tsup.config.ts"],
+    ignores: [
+      'eslint.config.js',
+      'prettier.config.js',
+      'vitest.config.ts',
+      'tsup.config.ts',
+    ],
   },
 ]
